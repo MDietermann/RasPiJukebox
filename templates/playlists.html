@@ -6,17 +6,21 @@
 </head>
 <body>
     <h1>Your Spotify Playlists</h1>
-    {% for pl in playlists %}
+    <div class="playlist-div">
+        {% for pl in playlists %}
+        <div class="playlist-item">
         {% if pl.image %}
             <img src="{{ pl.image }}" alt="Playlist cover" width="150" style="vertical-align: middle;">
         {% endif %}
         <p>
             {{ pl.name }} -
-            <a href="{{ url_for('play_playlist', playlist_id=pl.id) }}">Play</a> -
+            <a href="{{ url_for('spotify.play_playlist', playlist_id=pl.id) }}">Play</a> -
             <a href="{{ pl.url }}" target="_blank">Open in Spotify</a>
         </p>
+        </div>
     {% endfor %}
+    </div>
     <br>
-    <a href="{{ url_for('logout') }}">Logout</a>
+    <a href="{{ url_for('spotify.logout') }}">Logout</a>
 </body>
 </html>

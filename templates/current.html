@@ -1,0 +1,14 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Now Playing</title>
+    <script src="{{ url_for('static', filename='js/current.js') }}"></script>
+</head>
+<body>
+    <div id="now-playing">
+        <p>Loading...</p>
+    </div>
+    <br>
+    <a href="{{ url_for('spotify.logout') }}">Logout</a>
+</body>
+</html>
