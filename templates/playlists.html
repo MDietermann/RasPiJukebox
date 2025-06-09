@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Spotify Playlists</title>
+</head>
+<body>
+    <h1>Your Spotify Playlists</h1>
+    {% for pl in playlists %}
+        {% if pl.image %}
+            <img src="{{ pl.image }}" alt="Playlist cover" width="150" style="vertical-align: middle;">
+        {% endif %}
+        <p>
+            {{ pl.name }} -
+            <a href="{{ url_for('play_playlist', playlist_id=pl.id) }}">Play</a> -
+            <a href="{{ pl.url }}" target="_blank">Open in Spotify</a>
+        </p>
+    {% endfor %}
+    <br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
