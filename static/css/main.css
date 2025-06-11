@@ -1,0 +1,30 @@
+﻿body {
+    margin-left: 64px;
+    margin-right: 64px;
+}
+
+.playlist-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playlist-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s;
+    gap: 10px;
+}
+
+.playlist-item:hover {
+    background-color: #f0f0f0;
+}
+
+.playlist-text {
+    display: flex;
+    flex-direction: column;
+}
