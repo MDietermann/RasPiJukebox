@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Your Spotify Playlists</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
     <h1>Your Spotify Playlists</h1>
@@ -12,11 +13,16 @@
         {% if pl.image %}
             <img src="{{ pl.image }}" alt="Playlist cover" width="150" style="vertical-align: middle;">
         {% endif %}
-        <p>
-            {{ pl.name }} -
-            <a href="{{ url_for('spotify.play_playlist', playlist_id=pl.id) }}">Play</a> -
-            <a href="{{ pl.url }}" target="_blank">Open in Spotify</a>
-        </p>
+        <div class="playlist-text">
+            <h2>
+                {{ pl.name }}
+            </h2>
+            <div class="playlist-links">
+                <a href="{{ url_for('spotify.play_playlist', playlist_id=pl.id) }}">Play</a> -
+                <a href="{{ pl.url }}" target="_blank">Open in Spotify</a>
+            </div>
+        </div>
+
         </div>
     {% endfor %}
     </div>
