@@ -1,4 +1,5 @@
 from OAuth import check_token, sp
+from sense_hat import SenseHat
 
 def play_playlist(playlist_id):
     if not check_token():
