@@ -9,6 +9,14 @@ currently_playing = False
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(64)
+app.config.from_object(__name__)
+CORS(app, resources={r'/*': {'origins': '*'}})
+CORS(app, resources={r'/*': {
+    'origins':
+        'http://localhost:8080',
+    'allow_headers':
+        'Access-Control-Allow-Origin'
+}})
 
 app.register_blueprint(spotify_bp)
 

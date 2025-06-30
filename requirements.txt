@@ -1,3 +1,4 @@
 ﻿Flask==3.0.2
 spotipy==2.25.1
 dotenv==0.9.9
+Flask-Cors==6.0.0
