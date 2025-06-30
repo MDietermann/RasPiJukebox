@@ -1,4 +1,4 @@
-﻿from flask import redirect, session, url_for, request
+from flask import redirect, session, url_for, request
 from spotipy import FlaskSessionCacheHandler, SpotifyOAuth, Spotify
 
 client_id = '4dc338481d3348bb8feab99348b5aa03'
